@@ -1,4 +1,7 @@
 <?php
+namespace App;
+
+use \DateTime;
 /**
  * @author Yelohin GAUTHE <gautheyelohin@gmail.com>
  * Classe pour recuperer la meteo.

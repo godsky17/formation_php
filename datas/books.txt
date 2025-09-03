@@ -10,13 +10,4 @@
 {"username":"Pirre de la manche","message":"Je viens de reussir l&amp;#039;exo.","date":1756272340}
 {"username":"Pirre de la manche","message":"Je viens de reussir l&amp;#039;exo.","date":1756272345}
 {"username":"Ursul","message":"Viens dans mon patoir","date":1756272851}
-{"username":"a","message":"a","date":1756273754}
-{"username":"a","message":"a","date":1756273759}
-{"username":"a","message":"a","date":1756273813}
-{"username":"x","message":"x","date":1756273886}
-{"username":"x","message":"x","date":1756273891}
-{"username":"u","message":"u","date":1756273936}
-{"username":"Mohamed","message":"God job team\r\n","date":1756274324}
-{"username":"christiangauthe2@gmail.com","message":"A nouveau","date":1756274812}
-{"username":"christiangauthe2@gmail.com","message":"h","date":1756274823}
-{"username":"christiangauthe2@gmail.com","message":"h","date":1756274866}
+{"username":"bienvenu@gmail.com","message":"Allons tous \u00e0 la rencontre du seigneur.","date":1756891116}

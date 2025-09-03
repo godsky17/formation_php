@@ -1,4 +1,7 @@
 <?php 
+namespace App\GuestBook;
+
+use \DateTime;
 class Message
 {
     private $username;

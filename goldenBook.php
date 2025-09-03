@@ -1,21 +1,25 @@
 <?php
-require __DIR__ . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . "GuestBook.php";
-require __DIR__ . DIRECTORY_SEPARATOR . 'class' . DIRECTORY_SEPARATOR . "Message.php";
+require "vendor/autoload.php";
+use App\GuestBook\{
+    GuestBook as gb, Message
+};
+
 // Traitement 
 $valisation = false;
 $errors = [];
 $success = null;
 $messages = [];
+$datas = [];
 // Recuperation des messages en base
-$book = new GuestBook(__DIR__ . DIRECTORY_SEPARATOR . "datas" . DIRECTORY_SEPARATOR . "books.txt");
+$book = new gb(__DIR__ . DIRECTORY_SEPARATOR . "datas" . DIRECTORY_SEPARATOR . "books.txt");
 
 // Traiteement du formulaire
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    if (!empty($_POST['username']) && !empty($_POST['message'])) {
-        $datas = [
-            'username' => htmlspecialchars($_POST['username']),
-            'message' => htmlspecialchars($_POST['message']),
-        ];
+    $datas = [
+        'username' => htmlspecialchars($_POST['username']),
+        'message' => htmlspecialchars($_POST['message']),
+    ];    
+    if (!empty($datas['username']) && !empty($datas['message'])) {
         $date_time = new DateTime('now');
         $new_message = new Message($datas['username'], $datas['message'], $date_time);
         $validation = $new_message->isValid();
@@ -57,7 +61,7 @@ $messages = $book->getMessages();
             <?php endif ?>
             <div class="mb-3">
                 <label for="username_id" class="form-label">Username</label>
-                <input value="<?= htmlentities($_POST['username']) ?? '' ?>" type="text" name="username" id="username_id" class="form-control" placeholder="Username">
+                <input value="<?= htmlentities(@$_POST['username']) ?? '' ?>" type="text" name="username" id="username_id" class="form-control" placeholder="Username">
                 <?php if (!$valisation && !empty($errors['username'])): ?>
                     <div class="error">
                         <p><?= $errors['username'] ?></p>
@@ -67,7 +71,7 @@ $messages = $book->getMessages();
 
             <div class="mb-3">
                 <label for="message_id">Message</label>
-                <textarea name="message" id="message_id" placeholder="Message..." class="form-control"><?= htmlentities($_POST['message']) ?? '' ?></textarea>
+                <textarea name="message" id="message_id" placeholder="Message..." class="form-control"><?= !empty($datas) ? $datas['message'] : "" ?></textarea>
                 <?php if (!$valisation && !empty($errors['message'])): ?>
                     <div class="error">
                         <p><?= $errors['message'] ?></p>

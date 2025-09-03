@@ -1,4 +1,6 @@
 <?php 
+namespace App;
+
 class Compteur
 {
     /**@var string $compteur_file_path */

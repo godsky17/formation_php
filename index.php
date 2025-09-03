@@ -1,4 +1,5 @@
 <?php 
+require 'vendor/autoload.php';
     $page_title = "Page d'accueil";
     require "header.php";  
 ?>

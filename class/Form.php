@@ -1,4 +1,6 @@
 <?php 
+
+namespace App;
 class Form
 {
     public static function checkBox(string $name, string $value, array $data = []): string

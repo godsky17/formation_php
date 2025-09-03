@@ -1,0 +1,16 @@
+{
+    "name": "godsky/php",
+    "description": "Ma formation en php.",
+    "autoload": {
+        "psr-4": {
+            "App\\": "class/"
+        }
+    },
+    "authors": [
+        {
+            "name": "godsky17",
+            "email": "christiangauthe2@gmail.com"
+        }
+    ],
+    "require": {}
+}
